@@ -45,7 +45,7 @@ app.get('/api/v1/:text', async (req, res) => {
 
   try {
     const m3u8Url = await getFirstM3U8Request(targetUrl);
-    res.json({ m3u8Url });
+    res.send(m3u8Url);
   } catch (error) {
     res.status(500).json({ error: error.toString() });
   }
